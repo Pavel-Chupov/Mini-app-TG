@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0b0d0f;
+    color: #ffffff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Основной контейнер */
+
+.calculator {
+    width: min(100%, 420px);
+    padding: 20px;
+}
+
+/* Экран */
+
+.display {
+    position: relative;
+
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 28px 24px 30px;
+
+    background: #15181b;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+}
+
+.expression {
+    margin-bottom: 8px;
+
+    text-align: right;
+
+    color: #777d83;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.result {
+    text-align: right;
+
+    color: #f2f2f2;
+
+    font-size: 64px;
+    font-weight: 300;
+
+    line-height: 1.1;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.accent-line {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 80px;
+    height: 4px;
+
+    transform: translateX(-50%);
+
+    background: #ff7900;
+
+    border-radius: 10px 10px 0 0;
+}
+
+/* Сетка кнопок */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+/* Общий стиль кнопки */
+
+.button {
+    height: 72px;
+
+    border: none;
+    border-radius: 17px;
+
+    background: #171a1d;
+
+    color: #e9e9e9;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background 0.12s ease,
+        transform 0.08s ease;
+}
+
+/* Нажатие */
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Цифры */
+
+.number {
+    background: #171a1d;
+}
+
+/* Функциональные кнопки */
+
+.function {
+    color: #c7c9cb;
+}
+
+/* Операторы */
+
+.operator {
+    color: #ff7900;
+}
+
+/* Равно */
+
+.equals {
+    background: #ff7900;
+
+    color: #111315;
+
+    font-weight: 500;
+}
+
+/* Ноль занимает две колонки */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* Адаптация для маленьких экранов */
+
+@media (max-width: 380px) {
+
+    .calculator {
+        padding: 14px;
+    }
+
+    .display {
+        min-height: 165px;
+
+        padding: 22px 20px 26px;
+    }
+
+    .expression {
+        font-size: 18px;
+    }
+
+    .result {
+        font-size: 52px;
+    }
+
+    .button {
+        height: 64px;
+
+        border-radius: 15px;
+
+        font-size: 22px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+}

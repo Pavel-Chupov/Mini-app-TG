@@ -9,11 +9,11 @@ from aiogram.types import Message, WebAppInfo, InlineKeyboardMarkup, InlineKeybo
 
 # --- Настройки ---
 # Токен получаем у @BotFather в Telegram (команда /newbot)
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8445836364:AAGgCyK1GDO7wwEQma-K2vIE9aTf6jmbX-s")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 
 # HTTPS-адрес твоего задеплоенного webapp
-WEBAPP_URL = os.getenv("WEBAPP_URL", "https://pavel-chupov.github.io/Mini-app-TG/")
-PROXY_URL = os.getenv("PROXY_URL", "http://127.0.0.1:12334")
+WEBAPP_URL = os.getenv("WEBAPP_URL", "")
+PROXY_URL = os.getenv("PROXY_URL", "")
 
 logging.basicConfig(level=logging.INFO)
 
